@@ -7,7 +7,7 @@ const root = path.dirname(fileURLToPath(import.meta.url))
 const dist = path.join(root, 'dist')
 const logDir = process.env.LOG_DIR || path.join(root, 'logs')
 const logFile = path.join(logDir, 'pageviews.jsonl')
-const port = Number(process.env.PORT) || 3000
+const port = Number(process.env.PORT) || 80
 
 const types = {
   '.html': 'text/html; charset=utf-8', '.js': 'text/javascript', '.css': 'text/css',

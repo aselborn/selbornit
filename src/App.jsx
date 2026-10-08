@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import "./App.css";
 import profileImage from "./img/Anders Selborn.jpg";
 
@@ -17,10 +18,11 @@ const SKILL_GROUPS = [
     title: "Backend & integration",
     items: [
       "Python",
+      "C# och .NET i allmänhet",
       "Node.js",
       "REST API / API-integrationer",
       "JWT / autentisering",
-      "Databaser och SQL",
+      "Diverse databaser och SQL",
       "Integration mellan externa system och tjänster",
     ],
   },
@@ -52,7 +54,39 @@ const STATS = [
   { value: "1", label: "kontaktperson – alltid direkt" },
 ];
 
+
+
+// Webbläsaren kan inte skriva till filer. Funktionen skickar loggraden till
+// ett backend-endpoint (/api/log) som måste append:a den till /logs/log.txt.
+function logPageVisit() {
+  const entry = {
+    timestamp: new Date().toISOString(),
+    url: window.location.href,
+    referrer: document.referrer,
+    userAgent: navigator.userAgent,
+  };
+  const body = JSON.stringify(entry);
+
+  if (navigator.sendBeacon) {
+    navigator.sendBeacon(
+      "/api/log",
+      new Blob([body], { type: "application/json" })
+    );
+  } else {
+    fetch("/api/log", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body,
+      keepalive: true,
+    }).catch(() => {});
+  }
+}
+
 function App() {
+  useEffect(() => {
+    logPageVisit();
+  }, []);
+
   return (
     <div className="profile">
       <header className="nav">
@@ -63,10 +97,11 @@ function App() {
           <nav className="nav-links">
             <a href="#om-mig">Om mig</a>
             <a href="#kompetens">Kompetens</a>
+            <a href="#projekt">Projekt</a>
             <a href="#kontakt">Kontakt</a>
           </nav>
-          <a href="#kontakt" className="button button-primary nav-cta">
-            Kontakta mig
+          <a href="/anders-selborn-cv.html" className="button button-primary nav-cta">
+            Se mitt CV <span aria-hidden="true">↗</span>
           </a>
         </div>
       </header>
@@ -100,6 +135,9 @@ function App() {
                 </a>
                 <a href="#kompetens" className="button button-secondary">
                   Se kompetenser
+                </a>
+                <a href="/anders-selborn-cv.html" className="button button-secondary">
+                  Läs mitt CV <span aria-hidden="true">↗</span>
                 </a>
               </div>
             </div>
@@ -160,6 +198,63 @@ function App() {
                 </article>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section id="projekt" className="section projects">
+          <div className="container">
+            <div className="eyebrow">UTVALT PROJEKT</div>
+            <h2>Från idé till färdig webb</h2>
+            <p className="projects-intro">
+              Ett exempel på hur jag omsätter teknik och idéer till en
+              webbupplevelse du kan utforska direkt.
+            </p>
+
+            <article className="project-card">
+              <div className="project-copy">
+                <span className="project-label">LIVE · EGET PROJEKT</span>
+                <h3>SMHI</h3>
+                <p>
+                  En fristående webbtjänst byggd med fokus på en tydlig och
+                  genomarbetad upplevelse. Besök projektet och se det live.
+                </p>
+                <a
+                  className="button button-primary project-link"
+                  href="https://smhi.selbornit.se"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Besök projektet <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+
+              <a
+                className="project-preview"
+                href="https://smhi.selbornit.se"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Öppna SMHI-projektet i en ny flik"
+              >
+                <div className="preview-window">
+                  <div className="preview-topbar">
+                    <span className="preview-mark">SMHI<span>.</span></span>
+                    <span className="preview-status">WEBBPROJEKT</span>
+                  </div>
+                  <div className="preview-content">
+                    <div className="preview-orbit" aria-hidden="true">
+                      <span />
+                    </div>
+                    <span className="preview-caption">EN IDÉ. EN FÄRDIG TJÄNST.</span>
+                    <span className="preview-title">Utforska projektet</span>
+                    <span className="preview-arrow" aria-hidden="true">↗</span>
+                  </div>
+                  <div className="preview-footer">
+                    <span>SMHI.SELBORNIT.SE</span>
+                    <span className="preview-live"><i /> LIVE</span>
+                  </div>
+                </div>
+              </a>
+            </article>
           </div>
         </section>
 

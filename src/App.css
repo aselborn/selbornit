@@ -325,6 +325,217 @@
   background: var(--accent);
 }
 
+/* Projects */
+
+.projects {
+  text-align: center;
+}
+
+.projects-intro {
+  max-width: 560px;
+  margin: 0 auto;
+  color: var(--text);
+}
+
+.project-card {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  align-items: center;
+  gap: 48px;
+  margin-top: 40px;
+  padding: 48px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 100% 0%, var(--accent-bg), transparent 42%),
+    var(--code-bg);
+  text-align: left;
+  box-shadow: var(--shadow);
+}
+
+.project-copy {
+  position: relative;
+  z-index: 1;
+}
+
+.project-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--accent);
+  font: 600 12px var(--mono);
+  letter-spacing: 1.3px;
+}
+
+.project-label::before {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+  content: "";
+}
+
+.project-copy h3 {
+  margin: 18px 0 12px;
+  color: var(--text-h);
+  font: 700 40px/1.1 var(--heading);
+}
+
+.project-copy p {
+  max-width: 390px;
+  margin: 0;
+  color: var(--text);
+  line-height: 1.7;
+}
+
+.project-link {
+  margin-top: 28px;
+}
+
+.project-preview {
+  display: block;
+  padding: 20px;
+  border: 1px solid color-mix(in srgb, var(--accent) 22%, transparent);
+  border-radius: 18px;
+  background:
+    radial-gradient(ellipse at 75% 20%, rgba(59, 130, 246, 0.28), transparent 48%),
+    linear-gradient(140deg, #101c34, #172b4b 62%, #203d61);
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 24px 54px rgba(15, 35, 70, 0.2);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-preview:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 30px 64px rgba(15, 35, 70, 0.28);
+}
+
+.preview-window {
+  position: relative;
+  min-height: 250px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 12px;
+  background: rgba(8, 19, 38, 0.26);
+}
+
+.preview-topbar,
+.preview-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+}
+
+.preview-topbar {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.preview-mark {
+  font: 700 18px var(--heading);
+  letter-spacing: 0.3px;
+}
+
+.preview-mark span {
+  color: #7db8ff;
+}
+
+.preview-status,
+.preview-caption,
+.preview-footer {
+  color: rgba(255, 255, 255, 0.62);
+  font: 600 10px var(--mono);
+  letter-spacing: 1.2px;
+}
+
+.preview-content {
+  position: relative;
+  display: flex;
+  min-height: 164px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 28px;
+  overflow: hidden;
+}
+
+.preview-caption {
+  position: relative;
+  z-index: 1;
+  color: #9fcaff;
+}
+
+.preview-title {
+  position: relative;
+  z-index: 1;
+  margin-top: 10px;
+  font: 600 24px var(--heading);
+}
+
+.preview-arrow {
+  position: absolute;
+  right: 28px;
+  bottom: 26px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 22px;
+}
+
+.preview-orbit {
+  position: absolute;
+  top: -102px;
+  right: -28px;
+  width: 240px;
+  height: 240px;
+  border: 1px solid rgba(152, 199, 255, 0.24);
+  border-radius: 50%;
+}
+
+.preview-orbit::before,
+.preview-orbit::after {
+  position: absolute;
+  inset: 22px;
+  border: 1px solid rgba(152, 199, 255, 0.18);
+  border-radius: 50%;
+  content: "";
+}
+
+.preview-orbit::after {
+  inset: 48px;
+  background: radial-gradient(circle, rgba(100, 170, 255, 0.2), transparent 72%);
+}
+
+.preview-orbit span {
+  position: absolute;
+  top: 42px;
+  left: 34px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #a7d4ff;
+  box-shadow: 0 0 14px 4px rgba(122, 187, 255, 0.55);
+}
+
+.preview-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 9px;
+}
+
+.preview-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.preview-live i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #55d99a;
+}
+
 /* Contact */
 
 .contact {
@@ -417,6 +628,16 @@
     grid-template-columns: 1fr;
   }
 
+  .project-card {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding: 32px 24px;
+  }
+
+  .project-copy h3 {
+    font-size: 34px;
+  }
+
   .stats-row {
     grid-template-columns: 1fr;
   }
@@ -434,10 +655,21 @@
     padding: 48px 24px;
   }
 
+  .project-preview {
+    padding: 12px;
+  }
+
+  .preview-content {
+    padding: 24px 18px;
+  }
+
+  .preview-status {
+    font-size: 8px;
+  }
+
   .footer-inner {
     flex-direction: column;
     gap: 8px;
     text-align: center;
   }
 }
-

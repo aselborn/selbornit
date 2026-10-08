@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Anders Selborn – Systemutvecklare och Systemarkitekt">
+<title>CV – Anders Selborn | Systemutvecklare &amp; Systemarkitekt</title>
+<style>
+:root{
+  --bg:#080b10; --panel:#0f141c; --panel2:#121923; --text:#edf2f7;
+  --muted:#9aa7b6; --line:#25303d; --accent:#63d6c8; --accent2:#77a8ff;
+  --max:1180px; --radius:22px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(circle at 80% 0%,rgba(99,214,200,.11),transparent 28rem),radial-gradient(circle at 10% 20%,rgba(119,168,255,.08),transparent 30rem),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.65}
+a{color:inherit;text-decoration:none}
+.container{width:min(calc(100% - 48px),var(--max));margin:auto}
+nav{position:sticky;top:0;z-index:10;background:rgba(8,11,16,.78);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.06)}
+.nav-inner{height:70px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:800;letter-spacing:.08em;font-size:.9rem}
+.logo span{color:var(--accent)}
+.navlinks{display:flex;gap:26px;color:var(--muted);font-size:.88rem}
+.navlinks a:hover{color:var(--text)}
+.hero{min-height:calc(100vh - 70px);display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:70px;padding:90px 0}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--accent);font-size:.8rem;font-weight:800;text-transform:uppercase;letter-spacing:.16em}
+.eyebrow:before{content:"";width:32px;height:1px;background:var(--accent)}
+h1{font-size:clamp(3.4rem,7vw,6.5rem);line-height:.94;letter-spacing:-.065em;margin:20px 0 28px;max-width:800px}
+h1 em{font-style:normal;color:transparent;-webkit-text-stroke:1px #74808e}
+.lead{font-size:1.18rem;color:#b5c0cc;max-width:720px}
+.actions{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+.btn{padding:12px 19px;border:1px solid var(--line);border-radius:999px;font-weight:700;font-size:.9rem}
+.btn.primary{background:var(--text);color:#080b10;border-color:var(--text)}
+.btn:hover{transform:translateY(-2px)}
+.hero-card{position:relative;min-height:430px;border:1px solid var(--line);border-radius:32px;background:linear-gradient(145deg,rgba(20,28,38,.96),rgba(10,14,20,.94));overflow:hidden;padding:32px;display:flex;flex-direction:column;justify-content:flex-end;box-shadow:0 30px 90px rgba(0,0,0,.3)}
+.hero-card:before{content:"";position:absolute;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,var(--accent),transparent 68%);opacity:.15;right:-80px;top:-80px}
+.big-number{position:absolute;top:26px;left:30px;font-size:8rem;font-weight:900;letter-spacing:-.1em;color:rgba(255,255,255,.035)}
+.card-kicker{color:var(--muted);font-size:.75rem;text-transform:uppercase;letter-spacing:.15em}
+.hero-card h2{font-size:2rem;line-height:1.1;margin:10px 0}
+.statrow{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
+.stat{border-top:1px solid var(--line);padding-top:12px}
+.stat strong{display:block;font-size:1.5rem}
+.stat span{color:var(--muted);font-size:.75rem}
+section{padding:105px 0}
+.section-head{display:flex;justify-content:space-between;gap:40px;align-items:end;margin-bottom:48px}
+.section-head h2{font-size:clamp(2.2rem,4vw,4rem);line-height:1;margin:0;letter-spacing:-.05em}
+.section-head p{color:var(--muted);max-width:500px;margin:0}
+.profile-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:70px}
+.profile-text{font-size:1.18rem;color:#c4ccd6}
+.profile-text strong{color:var(--text)}
+.skillgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.skill{padding:20px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.018)}
+.skill b{display:block;margin-bottom:5px}.skill span{color:var(--muted);font-size:.9rem}
+.timeline{position:relative;border-left:1px solid var(--line);margin-left:12px}
+.job{position:relative;padding:0 0 50px 42px}
+.job:before{content:"";position:absolute;left:-5px;top:7px;width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px var(--bg),0 0 18px rgba(99,214,200,.55)}
+.job-year{color:var(--accent);font-size:.8rem;font-weight:800;letter-spacing:.12em}
+.job h3{font-size:1.4rem;margin:5px 0 2px}
+.job-company{color:var(--muted);font-weight:650}
+.job p{color:#aeb8c4;max-width:850px;margin:12px 0}
+.tags{display:flex;flex-wrap:wrap;gap:7px}
+.tag{font-size:.72rem;color:#aeb9c6;border:1px solid #293441;border-radius:999px;padding:3px 9px;background:#0d131a}
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.project{min-height:240px;padding:26px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(150deg,#111821,#0c1118);display:flex;flex-direction:column;justify-content:space-between}
+.project .num{font-size:.75rem;color:var(--accent);font-weight:800}
+.project h3{font-size:1.35rem;margin:25px 0 8px}
+.project p{font-size:.9rem;color:var(--muted);margin:0}
+.project .tags{margin-top:20px}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.info{padding:28px;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.018)}
+.info h3{margin-top:0}.info p,.info li{color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:35px 0 50px;color:var(--muted);font-size:.85rem}
+.footer-inner{display:flex;justify-content:space-between;gap:20px}
+@media(max-width:850px){
+ .navlinks{display:none}.hero{grid-template-columns:1fr;padding:70px 0}.hero-card{min-height:340px}
+ .profile-grid,.info-grid{grid-template-columns:1fr}.projects{grid-template-columns:1fr}.skillgrid{grid-template-columns:1fr}
+ .section-head{display:block}.section-head p{margin-top:18px}.container{width:min(calc(100% - 30px),var(--max))}
+ h1{font-size:clamp(3.2rem,16vw,5.2rem)}
+}
+@media print{
+ body{background:white;color:#111}nav,.actions{display:none}.hero{min-height:auto;padding:40px 0}.hero-card{color:#111;box-shadow:none}
+ section{padding:35px 0}.job{break-inside:avoid}.tag{color:#333;border-color:#ccc}.muted,.lead,.profile-text,.job p,.project p,.info p,.info li{color:#444}
+}
+</style>
+</head>
+<body>
+<nav><div class="container nav-inner">
+  <a class="logo" href="#">A<span>S</span></a>
+  <div class="navlinks">
+    <a href="#profil">Profil</a><a href="#erfarenhet">Erfarenhet</a><a href="#projekt">Projekt</a><a href="#kompetens">Kompetens</a>
+  </div>
+</div></nav>
+
+<header class="container hero">
+  <div>
+    <div class="eyebrow">Systemutvecklare · Systemarkitekt</div>
+    <h1>Anders<br><em>Selborn</em></h1>
+    <p class="lead">Erfaren systemutvecklare med naturvetenskaplig bakgrund och mer än 20 års erfarenhet av att bygga robust mjukvara, databaser och komplexa system.</p>
+    <div class="actions">
+      <a class="btn primary" href="#erfarenhet">Se erfarenhet ↓</a>
+      <a class="btn" href="#profil">Om Anders</a>
+    </div>
+  </div>
+  <aside class="hero-card">
+    <div class="big-number">27+</div>
+    <div class="card-kicker">Erfarenhet sedan</div>
+    <h2>1997</h2>
+    <p style="color:#aeb8c4;max-width:380px">Från GIS, kartografi och C++ till moderna backendplattformar, molntjänster, dataflöden och distribuerade system.</p>
+    <div class="statrow">
+      <div class="stat"><strong>20+</strong><span>år i branschen</span></div>
+      <div class="stat"><strong>15+</strong><span>uppdrag & roller</span></div>
+      <div class="stat"><strong>3</strong><span>språk flytande</span></div>
+    </div>
+  </aside>
+</header>
+
+<main>
+<section id="profil">
+<div class="container">
+  <div class="section-head"><h2>Profil</h2><p>Analytisk, teknikbred och van vid system där tillförlitlighet, prestanda och användarnytta spelar stor roll.</p></div>
+  <div class="profile-grid">
+    <div class="profile-text"><strong>Anders är naturvetare i grunden</strong> och har arbetat som systemarkitekt, scrum master och utvecklare i både stora komplexa system och mindre, verksamhetskritiska lösningar. Han har erfarenhet av att bygga system från grunden och sätter sig snabbt in i nya tekniker och verksamheter.</div>
+    <div class="skillgrid">
+      <div class="skill"><b>Backend & API</b><span>C#, .NET, Java, Python, PHP, REST, Web API, mikrotjänster</span></div>
+      <div class="skill"><b>Data & databaser</b><span>SQL Server, PostgreSQL, SQLite, MySQL, Oracle, MongoDB, CosmosDB</span></div>
+      <div class="skill"><b>GIS & geodata</b><span>Geografiska system, dataflöden, analyser, satellitdata och kartografi</span></div>
+      <div class="skill"><b>Cloud & DevOps</b><span>Azure, Azure DevOps, Docker, Git, Jenkins, Bash, Linux</span></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="erfarenhet">
+<div class="container">
+  <div class="section-head"><h2>Erfarenhet</h2><p>En karriär som rör sig från geodata och kartografi till distribuerade system, moln och avancerad backendutveckling.</p></div>
+  <div class="timeline">
+
+    <article class="job"><div class="job-year">2025</div><h3>Databasutvecklare / GIS-konsult</h3><div class="job-company">GIS-konsult</div><p>Utveckling och underhåll av GIS-databaser, datahantering och bearbetning. Etablering och effektivisering av dataflöden från olika källor samt komplexa analyser för kunders beslutsunderlag.</p><div class="tags"><i class="tag">GIS</i><i class="tag">Databaser</i><i class="tag">Geo-data</i></div></article>
+
+    <article class="job"><div class="job-year">2024</div><h3>Systemutvecklare</h3><div class="job-company">Aleido · konsult</div><p>Backend för avancerad hantering och distribution av produktinformation. Verksamhetskritiskt system med integrationer mot externa system, autentisering, synkronisering och administration.</p><div class="tags"><i class="tag">C#</i><i class="tag">Azure</i><i class="tag">ASP.NET Core</i><i class="tag">SQL Server</i><i class="tag">CosmosDB</i><i class="tag">Azure Functions</i></div></article>
+
+    <article class="job"><div class="job-year">2023 – 2024</div><h3>Senior Systemutvecklare</h3><div class="job-company">Toyota Material Handling · Göteborg · konsult</div><p>Utveckling av APMT, ett fullskaligt system för automatisk containerhantering i hamnar. Integration mellan backend och operatörer samt logik för transporter och lastoperationer.</p><div class="tags"><i class="tag">C#</i><i class="tag">Kafka</i><i class="tag">RabbitMQ</i><i class="tag">Docker</i><i class="tag">MongoDB</i><i class="tag">Elasticsearch</i><i class="tag">REST</i></div></article>
+
+    <article class="job"><div class="job-year">2023</div><h3>Arkitekt</h3><div class="job-company">SMHI · Göteborg · konsult</div><p>Utveckling inom datavärdskapet för oceanografi och marinbiologi, inklusive system- och webbutveckling. Systemen erbjuds som REST-baserade mikrotjänster.</p><div class="tags"><i class="tag">Python</i><i class="tag">Flask</i><i class="tag">FastAPI</i><i class="tag">Django</i><i class="tag">PostgreSQL</i><i class="tag">SQLite</i></div></article>
+
+    <article class="job"><div class="job-year">2022 – 2023</div><h3>Senior Utvecklare</h3><div class="job-company">Bit Addict · Göteborg</div><p>Senior utvecklare och arkitekt för en säker och robust backendlösning till SafeCyphers banksystem, utvecklad som Web API och hostad i Azure.</p><div class="tags"><i class="tag">.NET 6</i><i class="tag">C#</i><i class="tag">SQL Server</i><i class="tag">Azure DevOps</i><i class="tag">Web API</i><i class="tag">TOTP</i></div></article>
+
+    <article class="job"><div class="job-year">2019 – 2022</div><h3>Senior Systemarkitekt</h3><div class="job-company">RaySafe AB · Billdal</div><p>Ansvar för ny- och vidareutveckling av mjukvara för kalibrering av röntgeninstrument samt en ny webbplats för administration av kalibreringsprocessen.</p><div class="tags"><i class="tag">C#/.NET</i><i class="tag">ASP MVC</i><i class="tag">SQL Server</i><i class="tag">SQLite</i><i class="tag">Python</i><i class="tag">Vue</i><i class="tag">AngularJS</i></div></article>
+
+    <article class="job"><div class="job-year">2016 – 2019</div><h3>Senior Systemarkitekt</h3><div class="job-company">WSP Sverige AB · Göteborg</div><p>Interna projekt inom geografisk information, öppna data och analyser av satellitbilder. Även utveckling av avancerade operatörsgränssnitt och system för motorprovning.</p><div class="tags"><i class="tag">Java</i><i class="tag">PostgreSQL</i><i class="tag">C#/.NET</i><i class="tag">WPF</i><i class="tag">Oracle</i><i class="tag">GIS</i></div></article>
+
+    <article class="job"><div class="job-year">2015 – 2016</div><h3>Backendutvecklare</h3><div class="job-company">Telia Sverige AB · Göteborg</div><p>Vidareutveckling av Telias IPTV-backendplattform i Java på Linux, som utvecklare i ett av fyra Scrum-team.</p><div class="tags"><i class="tag">Java</i><i class="tag">Linux</i><i class="tag">Docker</i><i class="tag">REST</i><i class="tag">Jenkins</i><i class="tag">MySQL</i></div></article>
+
+    <article class="job"><div class="job-year">2012 – 2014</div><h3>Senior Systemutvecklare</h3><div class="job-company">Swarco Sverige AB · Mölndal</div><p>Nyutveckling för Skånetrafiken. System för cirka 1100 samtidiga busschaufförer med realtidsinformation, talutrop, rapportering och integration mot transportsystem.</p><div class="tags"><i class="tag">C/C++</i><i class="tag">Java</i><i class="tag">.NET</i><i class="tag">SQL Server</i><i class="tag">WCF</i><i class="tag">REST</i><i class="tag">Linux</i></div></article>
+
+    <article class="job"><div class="job-year">2010 – 2012</div><h3>Senior Systemutvecklare</h3><div class="job-company">Logica Sverige AB · Mölndal</div><p>Vidareutveckling av PostNords mobila handdatorsystem för postlogistik och track/trace. Verksamhetskritiskt system med Java-server och .NET-klient.</p><div class="tags"><i class="tag">Java</i><i class="tag">C#</i><i class="tag">Oracle</i><i class="tag">SQL Server</i><i class="tag">MSMQ</i></div></article>
+
+    <article class="job"><div class="job-year">2008 – 2010</div><h3>Senior Systemutvecklare</h3><div class="job-company">PocketMobile AB · Göteborg</div><p>Ansvar för server- och databasarkitekturen i ett mobilt affärssystem för Schenker, använt av cirka 5000 samtidiga chaufförer.</p><div class="tags"><i class="tag">C#</i><i class="tag">ASP.NET</i><i class="tag">SQL Server</i><i class="tag">MSMQ</i><i class="tag">JSON</i></div></article>
+
+    <article class="job"><div class="job-year">2007 – 2008</div><h3>Systemutvecklare</h3><div class="job-company">TietoEnator AB · Göteborg</div><p>Utveckling av sjukvårdssystem, bland annat nationella diabetesregistret. Fokus på integrationer och databashantering.</p><div class="tags"><i class="tag">C#</i><i class="tag">ASP.NET</i><i class="tag">SQL Server</i><i class="tag">XML</i></div></article>
+
+    <article class="job"><div class="job-year">2006 – 2007</div><h3>Systemutvecklare</h3><div class="job-company">Astra Tech AB · Mölndal</div><p>Vidareutveckling och integration av affärssystem samt applikationer för produktion. Mycket arbete med databasarkitektur.</p><div class="tags"><i class="tag">Visual Basic</i><i class="tag">C#</i><i class="tag">ASP.NET</i><i class="tag">SQL Server</i></div></article>
+
+    <article class="job"><div class="job-year">2000 – 2006</div><h3>Systemutvecklare</h3><div class="job-company">Sahlgrenska Sjukhuset · Göteborg</div><p>Behovsanalyser, systemutveckling och införande av IT-system inom vården. Utveckling och underhåll av stora databaser med många användare.</p><div class="tags"><i class="tag">SQL Server</i><i class="tag">C#</i><i class="tag">ASP.NET</i><i class="tag">Visual Basic</i><i class="tag">Informix</i></div></article>
+
+    <article class="job"><div class="job-year">1997 – 2000</div><h3>Programmerare / kartritare</h3><div class="job-company">Marin Mätteknik</div><p>Utveckling av GIS och batymetriska kartor, visualisering av bottenförhållanden och koordinattransformationer.</p><div class="tags"><i class="tag">C++</i><i class="tag">Fortran</i><i class="tag">C</i><i class="tag">Bash</i><i class="tag">Unix</i><i class="tag">AutoCAD</i></div></article>
+
+  </div>
+</div>
+</section>
+
+<section id="projekt">
+<div class="container">
+  <div class="section-head"><h2>Sidoprojekt</h2><p>Projekt som visar teknikintresse, nyfikenhet och förmågan att självständigt bygga fungerande lösningar.</p></div>
+  <div class="projects">
+    <article class="project"><div><div class="num">01 / 2020 →</div><h3><a href="https://smhi.selbornit.se">SMHI Temperaturer</a></h3><p>Insamling av temperaturdata via SMHI:s öppna API för egna analyser av klimatutvecklingen i Sverige.</p></div><div class="tags"><i class="tag">Python</i><i class="tag">SQLite</i><i class="tag">MySQL</i><i class="tag">API</i></div></article>
+    <article class="project"><div><div class="num">02 / 2015 →</div><h3>NEXA-lampor</h3><p>Raspberry Pi-baserad lösning för att styra lampor via NEXA-protokollet, konfigurerad genom webbgränssnitt.</p></div><div class="tags"><i class="tag">Raspberry Pi</i><i class="tag">Linux</i><i class="tag">Python</i><i class="tag">Java</i></div></article>
+    <article class="project"><div><div class="num">03 / 2008 →</div><h3>Cykeldata</h3><p>Live-loggning av cykelturer via Google Maps, Android och en egen webbplattform.</p></div><div class="tags"><i class="tag">PHP</i><i class="tag">MySQL</i><i class="tag">JavaScript</i><i class="tag">Android</i></div></article>
+  </div>
+</div>
+</section>
+
+<section id="kompetens">
+<div class="container">
+  <div class="section-head"><h2>Kompetens</h2><p>Tekniker och områden som återkommer genom karriären.</p></div>
+  <div class="info-grid">
+    <div class="info"><h3>Programmering</h3><p>SQL · PHP · ASP.NET · C# · C/C++ · Java · JavaScript · Python · Visual Basic · Fortran</p></div>
+    <div class="info"><h3>Ramverk & API</h3><p>AngularJS · Entity Framework · jQuery · Spring · WCF/RESTful · Web API · Windows Forms · WPF</p></div>
+    <div class="info"><h3>Plattformar & verktyg</h3><p>Linux · Unix · Windows · Git · Gitflow · Mercurial · NetBeans · IntelliJ · Visual Studio · VS Code · TFS · SVN</p></div>
+    <div class="info"><h3>Språk & övrigt</h3><p>Svenska – modersmål · Engelska – flytande · Tyska – flytande<br><br>Körkort: BE, CE</p></div>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="container">
+  <div class="section-head"><h2>Utbildning</h2></div>
+  <div class="info"><h3>Magisterexamen inom naturvetenskapligt geovetarprogram</h3><p>Naturgeografi · Göteborgs universitet · 1993 – 1997</p></div>
+</div>
+</section>
+</main>
+
+<footer><div class="container footer-inner"><span>ANDERS SELBORN</span><span>Systemutvecklare · Systemarkitekt</span></div></footer>
+</body>
+</html>
